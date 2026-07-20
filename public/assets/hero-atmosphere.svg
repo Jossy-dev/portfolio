@@ -1,0 +1,58 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <g opacity="0.9">
+    <circle cx="230" cy="180" r="220" fill="url(#orbWarm)"/>
+    <circle cx="1370" cy="250" r="270" fill="url(#orbCool)"/>
+    <circle cx="960" cy="760" r="340" fill="url(#orbSoft)"/>
+  </g>
+  <g opacity="0.7">
+    <path d="M0 666C101 619 204 584 340 580C517 575 618 679 796 674C979 669 1076 542 1287 539C1410 538 1509 566 1600 613V1000H0V666Z" fill="url(#ridgeOne)"/>
+    <path d="M0 731C115 688 202 691 329 694C494 699 612 760 775 771C989 785 1134 653 1324 651C1443 650 1522 674 1600 707V1000H0V731Z" fill="url(#ridgeTwo)"/>
+    <path d="M0 811C104 760 260 720 423 741C558 758 670 842 850 841C1026 840 1180 717 1374 725C1464 729 1535 750 1600 787V1000H0V811Z" fill="url(#ridgeThree)"/>
+  </g>
+  <g opacity="0.32" filter="url(#grain)">
+    <rect width="1600" height="1000" fill="url(#noise)"/>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="60" y1="80" x2="1540" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B87E87"/>
+      <stop offset="0.48" stop-color="#7A7696"/>
+      <stop offset="1" stop-color="#536E9F"/>
+    </linearGradient>
+    <radialGradient id="orbWarm" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(230 180) rotate(90) scale(220)">
+      <stop stop-color="#F2C3A0"/>
+      <stop offset="1" stop-color="#F2C3A0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbCool" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1370 250) rotate(90) scale(270)">
+      <stop stop-color="#B7D1E6"/>
+      <stop offset="1" stop-color="#B7D1E6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbSoft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 760) rotate(90) scale(340)">
+      <stop stop-color="#F4E5CF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#F4E5CF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ridgeOne" x1="800" y1="539" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#576079" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#233042" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="ridgeTwo" x1="800" y1="651" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39465A" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#18222E" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="ridgeThree" x1="800" y1="725" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#273342" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#10171F"/>
+    </linearGradient>
+    <filter id="grain" x="-20" y="-20" width="1640" height="1040" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.06"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="noise" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E6E6E6"/>
+    </linearGradient>
+  </defs>
+</svg>
