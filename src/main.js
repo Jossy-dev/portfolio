@@ -1,27 +1,13 @@
-import "./styles.css";
+const motionPreference = window.matchMedia("(prefers-reduced-motion: no-preference)");
 
-const revealNodes = document.querySelectorAll("[data-reveal]");
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (motionPreference.matches && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    for (const { target, isIntersecting } of entries) {
+      if (!isIntersecting) continue;
+      target.classList.add("is-animated");
+      observer.unobserve(target);
+    }
+  }, { threshold: 0.55 });
 
-if (reduceMotion) {
-  revealNodes.forEach((node) => node.classList.add("is-visible"));
-} else {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.16,
-      rootMargin: "0px 0px -40px 0px",
-    },
-  );
-
-  revealNodes.forEach((node) => observer.observe(node));
+  document.querySelectorAll("[data-motion]").forEach((art) => observer.observe(art));
 }
